@@ -24,11 +24,11 @@ Tab = Tab si on tape, Ctrl si on maintient. Hyper = Super gauche. Shift + Bksp =
 ```
 !     1 2 3 4 5  [WS←] ▽  6 7 8 9 0 Suppr
 ⇧     # { [ ( =  [WS→] ▽  - ) ] } $ ABC⇄あ
-Ctrl  ` @ & < |           ^ > * % + ~
+Ctrl  ` @ & < |           _ > + * % ^
         ▽ ▽ ▽              ▽ ▽ ▽
 ```
 
-WS←/WS→ = Super+PgUp / Super+PgDn. Hyper + LOWER + chiffre 1–5 = Super+chiffre : affiche le workspace N (skhd sur Mac, Hyprland sous Linux). ABC⇄あ = Ctrl+Espace. Shift + `!` = `?`, Shift + `-` = `_`, Shift + `|` = `\`. Les ouvrants et fermants sont en miroir sur la rangée de repos.
+WS←/WS→ = Super+PgUp / Super+PgDn. Hyper + LOWER + chiffre 1–5 = Super+chiffre : affiche le workspace N (skhd sur Mac, Hyprland sous Linux). ABC⇄あ = Ctrl+Espace. Shift + `!` = `?`, Shift + `^` = `~`, Shift + `|` = `\` ; Shift + `-` ne fait rien. Les ouvrants et fermants sont en miroir sur la rangée de repos.
 
 ### RAISE (pouce droit central)
 
