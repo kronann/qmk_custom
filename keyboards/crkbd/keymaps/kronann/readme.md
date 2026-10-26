@@ -51,6 +51,40 @@ Boot  Teinte− Sat− Lum− Effet− ·   ·  ·  · · · · · Boot
 
 Boot est sur les deux coins du bas, pour flasher chaque moitié.
 
+## Raccourcis Hyper (macOS)
+
+Hyper = pouce gauche extérieur, que Karabiner transforme en ⌃⌥⌘. Les raccourcis viennent de [`skhd/skhdrc`](../../../../skhd/skhdrc) ; skhd est désactivé dans UTM.
+
+| Hyper + | Sur le Corne | Action |
+| --- | --- | --- |
+| *(seul)* | Hyper tapé seul | Ouvre ou ferme Raycast (Karabiner) |
+| Entrée | pouce droit extérieur | Nouvelle fenêtre kitty |
+| B | B | Brave |
+| E | E | Marta (fichiers) |
+| R | R | Obsidian |
+| C | C | Zed (nouvelle fenêtre) |
+| P | P | Spotify |
+| Q | Q | Ferme la fenêtre |
+| ⇧ Q | ⇧ + Q | Quitte l'application au premier plan |
+| F | F | Plein écran (zoom yabai) |
+| Espace | Espace | Fenêtre flottante ⇄ en mosaïque |
+| V | V | Split vertical ⇄ horizontal |
+| ← / → | flèches de la BASE | Workspace précédent / suivant |
+| ↑ / ↓ | flèches de la BASE | Focus sur la fenêtre au-dessus / en dessous |
+| H J K L | H J K L | Focus sur la fenêtre à gauche, en bas, en haut, à droite |
+| Tab | Tab (tapé) | Focus sur la fenêtre suivante |
+| ⇧ ← ↓ ↑ → | ⇧ + flèches de la BASE | Échange la fenêtre avec sa voisine |
+| ⇧ H J K L | ⇧ + H J K L | Redimensionne la fenêtre de 50 px |
+| 1 à 5 | LOWER + chiffre | Workspace 1 à 5 |
+| ⇧ 1 à 5 | ⇧ + LOWER + chiffre | Envoie la fenêtre au workspace 1 à 5 et y va |
+| PgUp / PgDn | LOWER + WS← / WS→ | Workspace précédent / suivant |
+| S | S | Scratchpad : va au workspace 5 (y envoie la fenêtre s'il est vide), ou revient |
+| ⇧ S | ⇧ + S | Envoie la fenêtre au workspace 5 |
+| ⇧ R | ⇧ + R | Redémarre yabai |
+| ⇧ E | ⇧ + E | Redémarre skhd |
+| Échap | Esc | Verrouille la session |
+| ⇧ Échap | ⇧ + Esc | Mise en veille |
+
 ## Compiler et flasher
 
 ```bash
