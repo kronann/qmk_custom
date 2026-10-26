@@ -17,18 +17,18 @@ Ctrl  Z X C V B           N M , . / Esc
         Hyper LOWER Espace   Entrée RAISE Alt
 ```
 
-Tab = Tab si on tape, Ctrl si on maintient. Hyper = Super gauche. Shift + Bksp = Suppr. Shift façon US : Shift + `'` = `"`, Shift + `;` = `:`, Shift + `/` = `\`, Shift + `,` = `<`, Shift + `.` = `>`.
+Tab = Tab si on tape, Ctrl si on maintient. Hyper = Super gauche. Shift + Bksp = Suppr. Shift façon US : Shift + `'` = `"`, Shift + `;` = `:`, Shift + `/` = `?`, Shift + `,` = `<`, Shift + `.` = `>`.
 
 ### LOWER (pouce gauche central)
 
 ```
-!     1 2 3 4 5  ▽ [WS←]  6 7 8 9 0 Suppr
-⇧     # { [ ( =  ▽ [WS→]  - ) ] } $ _
+!     1 2 3 4 5  [WS←] ▽  6 7 8 9 0 Suppr
+⇧     # { [ ( =  [WS→] ▽  - ) ] } $ ABC⇄あ
 Ctrl  ` @ & < |           ^ > * % + ~
-        ▽ ▽ ABC⇄あ         ▽ ▽ ▽
+        ▽ ▽ ▽              ▽ ▽ ▽
 ```
 
-WS←/WS→ = Super+PgUp / Super+PgDn. Hyper + LOWER + chiffre 1–5 = Super+chiffre : affiche le workspace N (skhd sur Mac, Hyprland sous Linux). ABC⇄あ = Ctrl+Espace. Shift + `!` = `?`. Les ouvrants et fermants sont en miroir sur la rangée de repos.
+WS←/WS→ = Super+PgUp / Super+PgDn. Hyper + LOWER + chiffre 1–5 = Super+chiffre : affiche le workspace N (skhd sur Mac, Hyprland sous Linux). ABC⇄あ = Ctrl+Espace. Shift + `!` = `?`, Shift + `-` = `_`, Shift + `|` = `\`. Les ouvrants et fermants sont en miroir sur la rangée de repos.
 
 ### RAISE (pouce droit central)
 

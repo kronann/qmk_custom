@@ -11,10 +11,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_LOWER] = LAYOUT_split_3x6_3_ex2(
-        JP_EXLM, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    _______,     LGUI(KC_PGUP), KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL,
-        KC_LSFT, JP_HASH, JP_LCBR, JP_LBRC, JP_LPRN, JP_EQL,  _______,     LGUI(KC_PGDN), JP_MINS, JP_RPRN, JP_RBRC, JP_RCBR, JP_DLR,  JP_UNDS,
+        JP_EXLM, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    LGUI(KC_PGUP),     _______, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL,
+        KC_LSFT, JP_HASH, JP_LCBR, JP_LBRC, JP_LPRN, JP_EQL,  LGUI(KC_PGDN),     _______, JP_MINS, JP_RPRN, JP_RBRC, JP_RCBR, JP_DLR,  LCTL(KC_SPC),
         KC_LCTL, JP_GRV,  JP_AT,   JP_AMPR, JP_LABK, JP_PIPE,                              JP_CIRC, JP_RABK, JP_ASTR, JP_PERC, JP_PLUS, JP_TILD,
-                                            _______, _______, LCTL(KC_SPC),    _______,    _______, _______
+                                            _______, _______, _______,     _______, _______, _______
     ),
 
     [_RAISE] = LAYOUT_split_3x6_3_ex2(
@@ -36,11 +36,13 @@ const key_override_t delete_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC
 
 const key_override_t quote_key_override = ko_make_basic(MOD_MASK_SHIFT, JP_QUOT, JP_DQUO);
 const key_override_t question_key_override = ko_make_basic(MOD_MASK_SHIFT, JP_EXLM, JP_QUES);
+const key_override_t underscore_key_override = ko_make_basic(MOD_MASK_SHIFT, JP_MINS, JP_UNDS);
 
 const key_override_t *key_overrides[] = {
     &delete_key_override,
     &quote_key_override,
     &question_key_override,
+    &underscore_key_override,
 };
 
 // Karabiner reorders a report that both releases Shift and presses a key, so Shift is released in its own report first.
@@ -61,7 +63,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case JP_SCLN:
             tap_without_shift(JP_COLN);
             return false;
-        case JP_SLSH:
+        case JP_PIPE:
             tap_without_shift(JP_BSLS);
             return false;
     }
