@@ -45,13 +45,14 @@ ctrl + alt + cmd - space : yabai -m window --toggle float
 ctrl + alt + cmd - v : yabai -m window --toggle split
 
 # ============================================
-# Window Focus (flèches)
+# Window Focus (flèches haut/bas) et workspace précédent/suivant (flèches gauche/droite)
 # ============================================
 
-ctrl + alt + cmd - left : yabai -m window --focus west
+# SUPER + ←/→ : Previous / next workspace (Corne : flèches de la BASE, sans LOWER)
+ctrl + alt + cmd - left : yabai -m space --focus prev
+ctrl + alt + cmd - right : yabai -m space --focus next
 ctrl + alt + cmd - down : yabai -m window --focus south
 ctrl + alt + cmd - up : yabai -m window --focus north
-ctrl + alt + cmd - right : yabai -m window --focus east
 
 # ============================================
 # Window Focus (vim style hjkl)

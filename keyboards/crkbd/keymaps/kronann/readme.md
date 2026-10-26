@@ -68,6 +68,6 @@ Les deux OS lisent le clavier en JIS.
 - **Karabiner** : règle limitée au Corne (`vendor_id` / `product_id` du crkbd) qui transforme Ctrl + C V X Z A S F T W N Q R L P en ⌘ + la même touche, sauf si l'application au premier plan est kitty (`net.kovidgoyal.kitty`) ou UTM/Parallels. Les remaps 英数 → ⌥ gauche, かな → 英数 et Verr Maj → ⌘ droit visent tous les claviers (`is_keyboard: true`) ; le Corne n'envoie aucune de ces touches. La règle globale « ⌘ gauche → Hyper » reste globale.
 - **Karabiner, `\`** : macOS JIS donne `_` pour la touche ろ ; une règle limitée au Corne transforme ろ sans modificateur en ⌥ droit + ¥, qui donne `\`.
 - **kitty** : `macos_option_as_alt left`, pour que ⌥ droit reste une Option macOS et que ⌥¥ donne `\` (⌥ gauche reste Alt).
-- **skhd** : `ctrl + alt + cmd - 1` à `5` et `pageup`/`pagedown` pilotent les Spaces via yabai (voir `skhd/skhdrc`).
+- **skhd** : `ctrl + alt + cmd - 1` à `5`, `left`/`right` et `pageup`/`pagedown` pilotent les Spaces via yabai ; Hyper + ←/→ se tape directement sur la BASE, sans LOWER (voir `skhd/skhdrc`).
 - **Raycast** : la touche Hyper de Raycast reste sur None, sinon le ⌘ émis par la règle Ctrl du Corne devient Hyper.
 - **Copies versionnées** : à la racine du dépôt, `karabiner/karabiner.json` et `skhd/` (`skhdrc`, `scratchpad_toggle.sh`), copiés depuis `~/.config/karabiner/` et `~/.config/skhd/`. Après chaque modification de la config, recopier les fichiers et contrôler avec `diff`.
