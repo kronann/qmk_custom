@@ -70,4 +70,4 @@ Les deux OS lisent le clavier en JIS.
 - **kitty** : `macos_option_as_alt left`, pour que ⌥ droit reste une Option macOS et que ⌥¥ donne `\` (⌥ gauche reste Alt).
 - **skhd** : `ctrl + alt + cmd - 1` à `5` et `pageup`/`pagedown` pilotent les Spaces via yabai (voir `skhd/skhdrc`).
 - **Raycast** : la touche Hyper de Raycast reste sur None, sinon le ⌘ émis par la règle Ctrl du Corne devient Hyper.
-- **Copies versionnées** : à la racine du dépôt, `karabiner/karabiner.json` et `skhd/` (`skhdrc`, `scratchpad_toggle.sh`, `cycle_clockwise.sh`), copiés depuis `~/.config/karabiner/` et `~/.config/skhd/`. Après chaque modification de la config, recopier les fichiers et contrôler avec `diff`.
+- **Copies versionnées** : à la racine du dépôt, `karabiner/karabiner.json` et `skhd/` (`skhdrc`, `scratchpad_toggle.sh`), copiés depuis `~/.config/karabiner/` et `~/.config/skhd/`. Après chaque modification de la config, recopier les fichiers et contrôler avec `diff`.

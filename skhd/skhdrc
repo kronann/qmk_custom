@@ -122,11 +122,6 @@ ctrl + alt + cmd + shift - s : yabai -m window --space 5
 
 ctrl + alt + cmd - tab : yabai -m window --focus next || yabai -m window --focus first
 
-# Cycle entre fenêtres de la même app
-# TODO: "SUPER" is not an skhd modifier, this line broke config parsing
-# SUPER - 1 : ~/.config/skhd/cycle_clockwise.sh
-#~/.config/karabiner/toggle_same_app.sh
-
 # SUPER + SHIFT + R : Restart yabai
 ctrl + alt + cmd + shift - r : yabai --restart-service
 
