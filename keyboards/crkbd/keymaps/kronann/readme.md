@@ -2,7 +2,7 @@
 
 QWERTY, 4 couches, mêmes codes sur macOS et Linux. Le firmware envoie des codes japonais (`JP_*`) pour tous les symboles, et les deux OS lisent le clavier en JIS : chaque symbole du schéma sort tel quel. Le japonais passe par l'IME (Ctrl+Espace sous Linux ; sur macOS, la bascule reste à régler).
 
-Schéma des couches : [`layout.html`](layout.html). Configuration macOS qui va avec : [`macos/`](macos/).
+Schéma des couches : [`layout.html`](layout.html). Configuration macOS qui va avec : [`karabiner/`](../../../../karabiner/) et [`skhd/`](../../../../skhd/), à la racine du dépôt.
 
 Chaque couche se lit : 6 touches gauches, `[intérieure gauche]`, `[intérieure droite]`, 6 touches droites. `▽` = transparente, `·` = aucune action.
 
@@ -59,7 +59,7 @@ qmk compile -kb crkbd/rev4_1/standard -km kronann
 
 Flasher chaque moitié : ADJUST + Boot, puis copier `crkbd_rev4_1_standard_kronann.uf2` sur le volume qui apparaît.
 
-## Configuration OS (en place, copiée dans `macos/`)
+## Configuration OS (en place, copiée dans `karabiner/` et `skhd/` à la racine)
 
 Les deux OS lisent le clavier en JIS.
 
@@ -68,6 +68,6 @@ Les deux OS lisent le clavier en JIS.
 - **Karabiner** : règle limitée au Corne (`vendor_id` / `product_id` du crkbd) qui transforme Ctrl + C V X Z A S F T W N Q R L P en ⌘ + la même touche, sauf si l'application au premier plan est kitty (`net.kovidgoyal.kitty`) ou UTM/Parallels. Les remaps 英数 → ⌥ gauche, かな → 英数 et Verr Maj → ⌘ droit visent tous les claviers (`is_keyboard: true`) ; le Corne n'envoie aucune de ces touches. La règle globale « ⌘ gauche → Hyper » reste globale.
 - **Karabiner, `\`** : macOS JIS donne `_` pour la touche ろ ; une règle limitée au Corne transforme ろ sans modificateur en ⌥ droit + ¥, qui donne `\`.
 - **kitty** : `macos_option_as_alt left`, pour que ⌥ droit reste une Option macOS et que ⌥¥ donne `\` (⌥ gauche reste Alt).
-- **skhd** : `ctrl + alt + cmd - 1` à `5` et `pageup`/`pagedown` pilotent les Spaces via yabai (voir `macos/skhdrc`).
+- **skhd** : `ctrl + alt + cmd - 1` à `5` et `pageup`/`pagedown` pilotent les Spaces via yabai (voir `skhd/skhdrc`).
 - **Raycast** : la touche Hyper de Raycast reste sur None, sinon le ⌘ émis par la règle Ctrl du Corne devient Hyper.
-- **Copies versionnées** : `macos/` contient `karabiner.json`, `skhdrc`, `scratchpad_toggle.sh` et `cycle_clockwise.sh`, copiés depuis `~/.config`. Après chaque modification de la config, recopier les fichiers et contrôler avec `diff`.
+- **Copies versionnées** : à la racine du dépôt, `karabiner/karabiner.json` et `skhd/` (`skhdrc`, `scratchpad_toggle.sh`, `cycle_clockwise.sh`), copiés depuis `~/.config/karabiner/` et `~/.config/skhd/`. Après chaque modification de la config, recopier les fichiers et contrôler avec `diff`.

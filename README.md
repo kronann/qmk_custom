@@ -1,6 +1,8 @@
 # qmk_custom
 
-Userspace QMK du clavier Corne (crkbd rev4.1) : keymap `kronann`, QWERTY en 4 couches, mêmes codes sur macOS et Linux. Détails, schéma et configuration macOS : [`keyboards/crkbd/keymaps/kronann/`](keyboards/crkbd/keymaps/kronann/readme.md).
+Userspace QMK du clavier Corne (crkbd rev4.1) : keymap `kronann`, QWERTY en 4 couches, mêmes codes sur macOS et Linux. Détails et schéma : [`keyboards/crkbd/keymaps/kronann/`](keyboards/crkbd/keymaps/kronann/readme.md).
+
+Configuration macOS qui va avec, copiée depuis `~/.config` : [`karabiner/`](karabiner/) et [`skhd/`](skhd/).
 
 ## Compiler
 
