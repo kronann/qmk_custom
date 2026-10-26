@@ -1,6 +1,6 @@
 # Keymap kronann (Corne)
 
-QWERTY, 4 couches, mêmes codes sur macOS et Linux. Le firmware envoie des codes japonais (`JP_*`) pour tous les symboles, et les deux OS lisent le clavier en JIS : chaque symbole du schéma sort tel quel. Le japonais passe par l'IME (Ctrl+Espace sous Linux ; sur macOS, la bascule reste à régler).
+QWERTY, 4 couches, mêmes codes sur macOS et Linux. Le firmware envoie des codes japonais (`JP_*`) pour tous les symboles, et les deux OS lisent le clavier en JIS : chaque symbole du schéma sort tel quel. Le japonais passe par l'IME : Ctrl+Espace bascule ABC ⇄ japonais (fcitx5 sous Linux, règle Karabiner sur macOS).
 
 Schéma des couches : [`layout.html`](layout.html). Configuration macOS qui va avec : [`karabiner/`](../../../../karabiner/) et [`skhd/`](../../../../skhd/), à la racine du dépôt.
 
@@ -100,6 +100,7 @@ Les deux OS lisent le clavier en JIS.
 - **macOS** : `keyboard_type_v2 = "jis"` dans `~/.config/karabiner/karabiner.json`.
 - **Linux** : `kb_layout = "jp,fr,fr(ergol),us"` dans Hyprland, donc jp par défaut.
 - **Karabiner** : règle limitée au Corne (`vendor_id` / `product_id` du crkbd) qui transforme Ctrl + C V X Z A S F T W N Q R L P en ⌘ + la même touche, sauf si l'application au premier plan est kitty (`net.kovidgoyal.kitty`) ou UTM/Parallels. Les remaps 英数 → ⌥ gauche, かな → 英数 et Verr Maj → ⌘ droit visent tous les claviers (`is_keyboard: true`) ; le Corne n'envoie aucune de ces touches. La règle globale « ⌘ gauche → Hyper » reste globale.
+- **Karabiner, ABC ⇄ japonais** : une règle limitée au Corne fait de ⌃Espace une bascule : japonais (Romaji) si la source est ABC, ABC sinon (`select_input_source`). Elle n'envoie aucun raccourci, car ⌥Espace ouvrait aussi Raycast. Dans kitty, la source change mais la saisie reste en romaji.
 - **Karabiner, `\`** : macOS JIS donne `_` pour la touche ろ ; une règle limitée au Corne transforme ろ sans modificateur en ⌥ droit + ¥, qui donne `\`.
 - **kitty** : `macos_option_as_alt left`, pour que ⌥ droit reste une Option macOS et que ⌥¥ donne `\` (⌥ gauche reste Alt).
 - **skhd** : `ctrl + alt + cmd - 1` à `5`, `left`/`right` et `pageup`/`pagedown` pilotent les Spaces via yabai ; Hyper + ←/→ se tape directement sur la BASE, sans LOWER (voir `skhd/skhdrc`).

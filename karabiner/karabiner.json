@@ -613,6 +613,77 @@
                         ]
                     },
                     {
+                        "description": "Corne : ⌃Espace bascule ABC ⇄ japonais (comme fcitx5 sous Linux)",
+                        "manipulators": [
+                            {
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "device_if",
+                                        "identifiers": [
+                                            {
+                                                "vendor_id": 18003,
+                                                "product_id": 4
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "input_source_if",
+                                        "input_sources": [
+                                            {
+                                                "language": "^ja$"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "select_input_source": {
+                                            "input_source_id": "^com\\.apple\\.keylayout\\.ABC$"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "device_if",
+                                        "identifiers": [
+                                            {
+                                                "vendor_id": 18003,
+                                                "product_id": 4
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "select_input_source": {
+                                            "input_mode_id": "^com\\.apple\\.inputmethod\\.Japanese$"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "description": "Dans Kitty, transformer Right Command en Control",
                         "manipulators": [
                             {
