@@ -99,6 +99,7 @@ code { font-family: var(--f-mono); font-size: .9em; }
   <section class="notes">
     <h2>Décisions</h2>
     <ol>
+      <li><b>Couche HYPR.</b> Maintenu, le pouce gauche extérieur active HYPR (LED violettes). Toute touche transparente sort avec Super : les raccourcis Hyprland et skhd ne changent pas. WS ←/→ envoient Super+PgUp/PgDn, et Muet, Volume, Luminosité partent sans Super (avec ⌥, macOS ouvrirait les réglages). Tapé seul, il envoie Super.</li>
       <li><b>Hyper = Super gauche (<code>KC_LGUI</code>).</b> Sous Linux, c'est ton <code>SUPER</code> Hyprland ; taper Super seul ouvre le lanceur. Sur Mac, ta règle Karabiner « ⌘ gauche → Hyper » le transforme en Ctrl+Alt+⌘ pour skhd, et Raycast s'ouvre si tu le tapes seul. Côté Mac, seule la touche Hyper de Raycast est à régler (voir 3).</li>
       <li><b>Hôte JIS sur les deux OS.</b> Le firmware envoie des codes japonais (<code>JP_*</code>) : chaque symbole affiché ici sort tel quel sur Mac (clavier virtuel Karabiner en JIS) et sur Linux (<code>kb_layout = jp</code>).</li>
       <li><b>Ctrl reste Ctrl.</b> Sur Mac, une règle Karabiner, limitée au Corne, transforme Ctrl+C V X Z A S F T W N Q R L P en ⌘ hors de kitty, UTM et Parallels. Dans kitty, Ctrl+C interrompt et Ctrl+Shift+C copie, comme sous Linux. La touche Hyper de Raycast doit rester sur None : sinon le ⌘ émis par cette règle devient Hyper.</li>
@@ -120,7 +121,7 @@ const T = "_", E = "";
 const OS = {
   ctrl:  { linux: ["Ctrl", "mod"], mac: ["Ctrl", "mod", "⌘ hors kitty"] },
   alt:   { linux: ["Alt", "mod"], mac: ["⌥", "mod", "Option"] },
-  hyper: { linux: ["Super", "mod", "Hyprland"], mac: ["Hyper", "mod", "⌃⌥⌘ · Raycast"] },
+  hyper: { linux: ["Super", "layerk", "maintenu = HYPR"], mac: ["Hyper", "layerk", "maintenu = HYPR"] },
 };
 const hyper = "os:hyper", lower = ["LOWER", "layerk"], raise = ["RAISE", "layerk"];
 const shift = ["⇧", "mod"];
@@ -128,6 +129,9 @@ const layers = [
   { name: "BASE", how: "par défaut", L: [[["Tab","mod","maintenu = Ctrl"],"Q","W","E","R","T"], [shift,"A","S","D","F","G"], ["os:ctrl","Z","X","C","V","B"]],
     Lx: [["←","nav"], ["→","nav"]], R: [["Y","U","I","O","P",["Bksp","","⇧ = Suppr"]], ["H","J","K","L",[";","","⇧ = :"],["'","","⇧ = \""]], ["N","M",[",","","⇧ = <"],[".","","⇧ = >"],["/","","⇧ = ?"],"Esc"]],
     Rx: [["↑","nav"], ["↓","nav"]], Lt: [hyper, lower, "Espace"], Rt: ["Entrée", raise, "os:alt"] },
+  { name: "HYPR", how: "maintenir le pouce gauche extérieur · ▽ = Super + la touche de la base", L: [[T,T,T,T,T,T], [T,T,T,T,T,T], [T,T,T,T,T,T]],
+    Lx: [["WS ←","nav","Super+PgUp"], ["WS →","nav","Super+PgDn"]], R: [[T,T,T,T,T,T], [T,T,T,T,T,T], [["Muet","nav"],["Vol−","nav"],["Vol+","nav"],["Lum−","nav"],["Lum+","nav"],T]],
+    Rx: [T, T], Lt: [["HYPR","held"], T, T], Rt: [T, T, T] },
   { name: "LOWER", how: "maintenir le pouce gauche central", L: [[["!","","⇧ = ?"],"#","@","{","}","&"], [shift,"$","%","(",")","="], ["os:ctrl","`","<","[","]",">"]],
     Lx: [["WS ←","nav","Super+PgUp"], ["WS →","nav","Super+PgDn"]], R: [["*","1","2","3","/",["Suppr","nav"]], ["+","4","5","6",["-","","⇧ = ∅"],["ABC⇄あ","ime jp","Ctrl+Espace"]], [["_"],"7","8","9",".",","]],
     Rx: [["^","","⇧ = ~"], ["|","","⇧ = \\"]], Lt: [T, ["LOWER","held"], T], Rt: ["0", ["RAISE","layerk","→ ADJUST"], T] },

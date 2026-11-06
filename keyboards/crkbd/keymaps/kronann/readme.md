@@ -1,6 +1,6 @@
 # Keymap kronann (Corne)
 
-QWERTY, 4 couches, mêmes codes sur macOS et Linux. Le firmware envoie des codes japonais (`JP_*`) pour tous les symboles, et les deux OS lisent le clavier en JIS : chaque symbole du schéma sort tel quel. Le japonais passe par l'IME : Ctrl+Espace bascule ABC ⇄ japonais (fcitx5 sous Linux, règle Karabiner sur macOS).
+QWERTY, 5 couches, mêmes codes sur macOS et Linux. Le firmware envoie des codes japonais (`JP_*`) pour tous les symboles, et les deux OS lisent le clavier en JIS : chaque symbole du schéma sort tel quel. Le japonais passe par l'IME : Ctrl+Espace bascule ABC ⇄ japonais (fcitx5 sous Linux, règle Karabiner sur macOS).
 
 Schéma des couches : [`layout.html`](layout.html). Configuration macOS qui va avec : [`karabiner/`](../../../../karabiner/) et [`skhd/`](../../../../skhd/), à la racine du dépôt.
 
@@ -17,7 +17,18 @@ Ctrl  Z X C V B           N M , . / Esc
         Hyper LOWER Espace   Entrée RAISE Alt
 ```
 
-Tab = Tab si on tape, Ctrl si on maintient. Hyper = Super gauche. Deux taps sur Shift = Caps Word (majuscules jusqu'au prochain espace). Shift + Bksp = Suppr. Shift façon US : Shift + `'` = `"`, Shift + `;` = `:`, Shift + `/` = `?`, Shift + `,` = `<`, Shift + `.` = `>`.
+Tab = Tab si on tape, Ctrl si on maintient. Hyper = Super gauche tapé seul, couche HYPR maintenu. Deux taps sur Shift = Caps Word (majuscules jusqu'au prochain espace). Shift + Bksp = Suppr. Shift façon US : Shift + `'` = `"`, Shift + `;` = `:`, Shift + `/` = `?`, Shift + `,` = `<`, Shift + `.` = `>`.
+
+### HYPR (pouce gauche extérieur, LED violettes)
+
+```
+▽     ▽ ▽ ▽ ▽ ▽  [WS←] ▽  ▽ ▽ ▽ ▽ ▽ ▽
+▽     ▽ ▽ ▽ ▽ ▽  [WS→] ▽  ▽ ▽ ▽ ▽ ▽ ▽
+▽     ▽ ▽ ▽ ▽ ▽           Muet Vol− Vol+ Lum− Lum+ ▽
+        HYPR ▽ ▽            ▽ ▽ ▽
+```
+
+Toute touche transparente sort avec Super : les raccourcis Hyprland et skhd marchent comme avant. Super n'est envoyé qu'à la première touche, et jamais avec le média (sur Mac, ⌥ + Volume ouvrirait les réglages Son). WS←/WS→ = Super+PgUp / Super+PgDn. LOWER passe au-dessus de HYPR : Hyper + LOWER + chiffre marche toujours.
 
 ### LOWER (pouce gauche central)
 
@@ -77,7 +88,7 @@ Hyper = pouce gauche extérieur, que Karabiner transforme en ⌃⌥⌘. Les racc
 | ⇧ H J K L | ⇧ + H J K L | Redimensionne la fenêtre de 50 px |
 | 1 à 5 | LOWER + chiffre | Workspace 1 à 5 |
 | ⇧ 1 à 5 | ⇧ + LOWER + chiffre | Envoie la fenêtre au workspace 1 à 5 et y va |
-| PgUp / PgDn | LOWER + WS← / WS→ | Workspace précédent / suivant |
+| PgUp / PgDn | WS← / WS→ (HYPR ou LOWER) | Workspace précédent / suivant |
 | S | S | Scratchpad : va au workspace 5 (y envoie la fenêtre s'il est vide), ou revient |
 | ⇧ S | ⇧ + S | Envoie la fenêtre au workspace 5 |
 | ⇧ R | ⇧ + R | Redémarre yabai |

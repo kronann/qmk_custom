@@ -5,6 +5,9 @@
 
 bool rgb_matrix_indicators_user(void) {
     switch (get_highest_layer(layer_state)) {
+        case _HYPER:
+            rgb_matrix_set_color_all(153, 0, 255);
+            break;
         case _LOWER:
             rgb_matrix_set_color_all(0, 204, 0);
             break;

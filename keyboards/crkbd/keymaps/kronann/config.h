@@ -35,3 +35,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define SPLIT_MODS_ENABLE
 
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
+
+// _HYPER sits under the tri-layer so LOWER keys win over it.
+#define TRI_LAYER_LOWER_LAYER 2
+#define TRI_LAYER_UPPER_LAYER 3
+#define TRI_LAYER_ADJUST_LAYER 4
