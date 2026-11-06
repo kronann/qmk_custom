@@ -89,8 +89,8 @@ code { font-family: var(--f-mono); font-size: .9em; }
       <span class="sys"><i></i>système</span>
     </div>
     <div class="toggle" role="group" aria-label="Système affiché">
-      <button id="os-linux" aria-pressed="true">Linux</button>
-      <button id="os-mac" aria-pressed="false">macOS</button>
+      <button id="os-linux" aria-pressed="true">Linux · Hyprland</button>
+      <button id="os-mac" aria-pressed="false">macOS · skhd</button>
     </div>
   </div>
 
@@ -152,7 +152,8 @@ const layers = [
     Rx: [E, E], Lt: [E, ["LOWER","held"], E], Rt: [E, ["RAISE","held"], E] },
 ];
 
-let os = "linux";
+// Open on the viewer's own OS: the HYPR shortcuts differ between Hyprland and skhd.
+let os = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent) ? "mac" : "linux";
 function keyEl(spec, extra) {
   const el = document.createElement("div");
   el.className = "k " + (extra || "");
@@ -186,13 +187,14 @@ function render() {
     sc.append(b); s.append(sc); root.append(s);
   }
 }
-for (const id of ["linux", "mac"]) document.getElementById("os-" + id).addEventListener("click", () => {
+function setOs(id) {
   os = id;
   document.getElementById("os-linux").setAttribute("aria-pressed", id === "linux");
   document.getElementById("os-mac").setAttribute("aria-pressed", id === "mac");
   render();
-});
-render();
+}
+for (const id of ["linux", "mac"]) document.getElementById("os-" + id).addEventListener("click", () => setOs(id));
+setOs(os);
 </script>
 </body>
 </html>
