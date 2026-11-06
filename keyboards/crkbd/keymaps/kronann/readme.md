@@ -64,7 +64,7 @@ Boot est sur les deux coins du bas, pour flasher chaque moitié. Le média est s
 
 ## Raccourcis Hyper (macOS)
 
-Hyper = pouce gauche extérieur, que Karabiner transforme en ⌃⌥⌘. Les raccourcis viennent de [`skhd/skhdrc`](../../../../skhd/skhdrc) ; skhd est désactivé dans UTM.
+Hyper = pouce gauche extérieur : maintenu, il active la couche HYPR, où chaque touche sort avec Super, que Karabiner transforme en ⌃⌥⌘. Les raccourcis viennent de [`skhd/skhdrc`](../../../../skhd/skhdrc) ; skhd est désactivé dans UTM.
 
 | Hyper + | Sur le Corne | Action |
 | --- | --- | --- |
@@ -80,7 +80,6 @@ Hyper = pouce gauche extérieur, que Karabiner transforme en ⌃⌥⌘. Les racc
 | F | F | Plein écran (zoom yabai) |
 | Espace | Espace | Fenêtre flottante ⇄ en mosaïque |
 | V | V | Split vertical ⇄ horizontal |
-| ← / → | flèches de la BASE | Workspace précédent / suivant |
 | ↑ / ↓ | flèches de la BASE | Focus sur la fenêtre au-dessus / en dessous |
 | H J K L | H J K L | Focus sur la fenêtre à gauche, en bas, en haut, à droite |
 | Tab | Tab (tapé) | Focus sur la fenêtre suivante |
@@ -88,13 +87,43 @@ Hyper = pouce gauche extérieur, que Karabiner transforme en ⌃⌥⌘. Les racc
 | ⇧ H J K L | ⇧ + H J K L | Redimensionne la fenêtre de 50 px |
 | 1 à 5 | LOWER + chiffre | Workspace 1 à 5 |
 | ⇧ 1 à 5 | ⇧ + LOWER + chiffre | Envoie la fenêtre au workspace 1 à 5 et y va |
-| PgUp / PgDn | WS← / WS→ (HYPR ou LOWER) | Workspace précédent / suivant |
+| PgUp / PgDn | WS← / WS→ (touches intérieures gauches) | Workspace précédent / suivant |
 | S | S | Scratchpad : va au workspace 5 (y envoie la fenêtre s'il est vide), ou revient |
 | ⇧ S | ⇧ + S | Envoie la fenêtre au workspace 5 |
 | ⇧ R | ⇧ + R | Redémarre yabai |
 | ⇧ E | ⇧ + E | Redémarre skhd |
 | Échap | Esc | Verrouille la session |
 | ⇧ Échap | ⇧ + Esc | Mise en veille |
+
+## Raccourcis Super (Linux, Hyprland)
+
+Les mêmes touches, maintenues avec HYPR, sortent avec Super. Raccourcis de `~/.config/hypr/hyprland/keybinds.conf` et `custom/keybinds.conf`, hors chiffres.
+
+| Super + | Sur le Corne | Action |
+| --- | --- | --- |
+| *(seul)* | HYPR tapé seul | Vue d'ensemble / lanceur |
+| Entrée / T | pouce droit extérieur / T | Terminal |
+| B | B | Navigateur |
+| C | C | Zed |
+| E | E | Gestionnaire de fichiers |
+| X | X | Éditeur de texte |
+| I | I | Réglages |
+| Q | Q | Ferme la fenêtre |
+| F / D | F / D | Plein écran / agrandir |
+| S | S | Scratchpad |
+| V | V | Historique du presse-papiers |
+| A / O | A / O | Panneau gauche |
+| P | P | Capture d'écran dans le presse-papiers |
+| J | J | Échange la fenêtre avec la suivante |
+| K | K | Clavier à l'écran |
+| G | G | Viseur |
+| Tab | Tab (tapé) | Vue d'ensemble |
+| ↑ / ↓ | flèches intérieures droites | Focus sur la fenêtre au-dessus / en dessous |
+| PgUp / PgDn | WS← / WS→ (touches intérieures gauches) | Workspace précédent / suivant |
+| Bksp | Bksp | Menu du tableau de bord |
+| Échap | Esc | Verrouille la session |
+
+Sur HYPR, N M , . / envoient le média : Super+N (panneau droit), Super+M (contrôles média), Super+. (emoji) et Super+/ (aide) ne sont plus accessibles depuis le Corne.
 
 ## Compiler et flasher
 

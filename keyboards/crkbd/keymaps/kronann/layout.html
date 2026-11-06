@@ -99,7 +99,7 @@ code { font-family: var(--f-mono); font-size: .9em; }
   <section class="notes">
     <h2>Décisions</h2>
     <ol>
-      <li><b>Couche HYPR.</b> Maintenu, le pouce gauche extérieur active HYPR (LED violettes). Toute touche transparente sort avec Super : les raccourcis Hyprland et skhd ne changent pas. WS ←/→ envoient Super+PgUp/PgDn, et Muet, Volume, Luminosité partent sans Super (avec ⌥, macOS ouvrirait les réglages). Tapé seul, il envoie Super.</li>
+      <li><b>Couche HYPR.</b> Maintenu, le pouce gauche extérieur active HYPR (LED violettes). Toute touche transparente sort avec Super : les raccourcis Hyprland et skhd ne changent pas. WS ←/→ envoient Super+PgUp/PgDn, et Muet, Volume, Luminosité partent sans Super (avec ⌥, macOS ouvrirait les réglages). Tapé seul, il envoie Super. Le bouton Linux / macOS affiche les raccourcis de Hyprland ou de skhd. Sous Linux, le média masque Super+N (panneau droit), Super+M (contrôles média), Super+. (emoji) et Super+/ (aide).</li>
       <li><b>Hyper = Super gauche (<code>KC_LGUI</code>).</b> Sous Linux, c'est ton <code>SUPER</code> Hyprland ; taper Super seul ouvre le lanceur. Sur Mac, ta règle Karabiner « ⌘ gauche → Hyper » le transforme en Ctrl+Alt+⌘ pour skhd, et Raycast s'ouvre si tu le tapes seul. Côté Mac, seule la touche Hyper de Raycast est à régler (voir 3).</li>
       <li><b>Hôte JIS sur les deux OS.</b> Le firmware envoie des codes japonais (<code>JP_*</code>) : chaque symbole affiché ici sort tel quel sur Mac (clavier virtuel Karabiner en JIS) et sur Linux (<code>kb_layout = jp</code>).</li>
       <li><b>Ctrl reste Ctrl.</b> Sur Mac, une règle Karabiner, limitée au Corne, transforme Ctrl+C V X Z A S F T W N Q R L P en ⌘ hors de kitty, UTM et Parallels. Dans kitty, Ctrl+C interrompt et Ctrl+Shift+C copie, comme sous Linux. La touche Hyper de Raycast doit rester sur None : sinon le ⌘ émis par cette règle devient Hyper.</li>
@@ -125,13 +125,22 @@ const OS = {
 };
 const hyper = "os:hyper", lower = ["LOWER", "layerk"], raise = ["RAISE", "layerk"];
 const shift = ["⇧", "mod"];
+// Super + key on the HYPR layer: Hyprland action on Linux, skhd action on macOS; unbound shows as transparent.
+const hk = (key, linux, mac) => ({ linux: linux ? [key, "nav", linux] : T, mac: mac ? [key, "nav", mac] : T });
 const layers = [
   { name: "BASE", how: "par défaut", L: [[["Tab","mod","maintenu = Ctrl"],"Q","W","E","R","T"], [shift,"A","S","D","F","G"], ["os:ctrl","Z","X","C","V","B"]],
     Lx: [["←","nav"], ["→","nav"]], R: [["Y","U","I","O","P",["Bksp","","⇧ = Suppr"]], ["H","J","K","L",[";","","⇧ = :"],["'","","⇧ = \""]], ["N","M",[",","","⇧ = <"],[".","","⇧ = >"],["/","","⇧ = ?"],"Esc"]],
     Rx: [["↑","nav"], ["↓","nav"]], Lt: [hyper, lower, "Espace"], Rt: ["Entrée", raise, "os:alt"] },
-  { name: "HYPR", how: "maintenir le pouce gauche extérieur · ▽ = Super + la touche de la base", L: [[T,T,T,T,T,T], [T,T,T,T,T,T], [T,T,T,T,T,T]],
-    Lx: [["WS ←","nav","Super+PgUp"], ["WS →","nav","Super+PgDn"]], R: [[T,T,T,T,T,T], [T,T,T,T,T,T], [["Muet","nav"],["Vol−","nav"],["Vol+","nav"],["Lum−","nav"],["Lum+","nav"],T]],
-    Rx: [T, T], Lt: [["HYPR","held"], T, T], Rt: [T, T, T] },
+  { name: "HYPR", how: "maintenir le pouce gauche extérieur · chaque touche sort avec Super · ▽ = sans raccourci",
+    L: [[hk("Tab","vue d'ens.","fen. suiv."), hk("Q","fermer","fermer · ⇧ quitter"), hk("W"), hk("E","fichiers","Marta · ⇧ skhd"), hk("R",null,"Obsidian · ⇧ yabai"), hk("T","terminal")],
+        [shift, hk("A","panneau G"), hk("S","scratchpad","scratch · ⇧ env."), hk("D","agrandir"), hk("F","plein écran","plein écran"), hk("G","viseur")],
+        ["os:ctrl", hk("Z"), hk("X","éditeur txt"), hk("C","Zed","Zed"), hk("V","presse-pap.","split"), hk("B","navigateur","Brave")]],
+    Lx: [["WS ←","nav","Super+PgUp"], ["WS →","nav","Super+PgDn"]],
+    R: [[hk("Y"), hk("U"), hk("I","réglages"), hk("O","panneau G"), hk("P","capture","Spotify"), hk("Bksp","menu")],
+        [hk("H",null,"focus ← · ⇧ taille"), hk("J","échanger","focus ↓ · ⇧ taille"), hk("K","clavier écran","focus ↑ · ⇧ taille"), hk("L",null,"focus → · ⇧ taille"), hk(";"), hk("'")],
+        [["Muet","nav"],["Vol−","nav"],["Vol+","nav"],["Lum−","nav"],["Lum+","nav"], hk("Esc","verrouiller","verrou · ⇧ veille")]],
+    Rx: [hk("↑","focus","focus"), hk("↓","focus","focus")],
+    Lt: [["HYPR","held"], T, hk("Espace",null,"flottant")], Rt: [hk("Entrée","terminal","kitty"), T, T] },
   { name: "LOWER", how: "maintenir le pouce gauche central", L: [[["!","","⇧ = ?"],"#","@","{","}","&"], [shift,"$","%","(",")","="], ["os:ctrl","`","<","[","]",">"]],
     Lx: [["WS ←","nav","Super+PgUp"], ["WS →","nav","Super+PgDn"]], R: [["*","1","2","3","/",["Suppr","nav"]], ["+","4","5","6",["-","","⇧ = ∅"],["ABC⇄あ","ime jp","Ctrl+Espace"]], [["_"],"7","8","9",".",","]],
     Rx: [["^","","⇧ = ~"], ["|","","⇧ = \\"]], Lt: [T, ["LOWER","held"], T], Rt: ["0", ["RAISE","layerk","→ ADJUST"], T] },
@@ -148,6 +157,7 @@ function keyEl(spec, extra) {
   const el = document.createElement("div");
   el.className = "k " + (extra || "");
   if (typeof spec === "string" && spec.startsWith("os:")) spec = OS[spec.slice(3)][os];
+  if (spec && spec.linux !== undefined) spec = spec[os];
   if (spec === T) { el.classList.add("t"); el.textContent = "▽"; el.title = "transparent : touche de la couche du dessous"; return el; }
   if (spec === E) { el.classList.add("e"); return el; }
   const [label, cls, sub] = Array.isArray(spec) ? spec : [spec];
