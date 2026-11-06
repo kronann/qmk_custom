@@ -17,39 +17,39 @@ Ctrl  Z X C V B           N M , . / Esc
         Hyper LOWER Espace   Entrée RAISE Alt
 ```
 
-Tab = Tab si on tape, Ctrl si on maintient. Hyper = Super gauche. Shift + Bksp = Suppr. Shift façon US : Shift + `'` = `"`, Shift + `;` = `:`, Shift + `/` = `?`, Shift + `,` = `<`, Shift + `.` = `>`.
+Tab = Tab si on tape, Ctrl si on maintient. Hyper = Super gauche. Deux taps sur Shift = Caps Word (majuscules jusqu'au prochain espace). Shift + Bksp = Suppr. Shift façon US : Shift + `'` = `"`, Shift + `;` = `:`, Shift + `/` = `?`, Shift + `,` = `<`, Shift + `.` = `>`.
 
 ### LOWER (pouce gauche central)
 
 ```
-!     1 2 3 4 5  [WS←] ▽  6 7 8 9 0 Suppr
-⇧     # { [ ( =  [WS→] ▽  - ) ] } $ ABC⇄あ
-Ctrl  ` @ & < |           _ > + * % ^
-        ▽ ▽ ▽              ▽ ▽ ▽
+!     # @ { } &  [WS←] [^]  * 1 2 3 / Suppr
+⇧     $ % ( ) =  [WS→] [|]  + 4 5 6 - ABC⇄あ
+Ctrl  ` < [ ] >             _ 7 8 9 . ,
+        ▽ ▽ ▽                0 ▽ ▽
 ```
 
-WS←/WS→ = Super+PgUp / Super+PgDn. Hyper + LOWER + chiffre 1–5 = Super+chiffre : affiche le workspace N (skhd sur Mac, Hyprland sous Linux). ABC⇄あ = Ctrl+Espace. Shift + `!` = `?`, Shift + `^` = `~`, Shift + `|` = `\` ; Shift + `-` ne fait rien. Les ouvrants et fermants sont en miroir sur la rangée de repos.
+WS←/WS→ = Super+PgUp / Super+PgDn. Hyper + LOWER + chiffre 1–5 = Super+chiffre : affiche le workspace N (skhd sur Mac, Hyprland sous Linux). ABC⇄あ = Ctrl+Espace. Shift + `!` = `?`, Shift + `^` = `~`, Shift + `|` = `\` ; Shift + `-` ne fait rien. Symboles à gauche, paires côte à côte ; chiffres en pavé à droite, 0 au pouce.
 
 ### RAISE (pouce droit central)
 
 ```
-▽     · · ↑ · ·       ▽ ▽  Début PgDn PgUp Fin Impr ▽
+▽     · Mol↓ ↑ Mol↑ ·   ▽ ▽  Début PgDn PgUp Fin Impr ▽
 ⇧     Mol↑ ← ↓ → Lent ▽ ▽  ← ↓ ↑ → · ·
-Ctrl  Mol↓ ClicD ClicM ClicG ·   Muet Vol− Vol+ Lum− Lum+ ▽
+Ctrl  Mol↓ ClicD ClicM ClicG ·   Mot← Sél↓ Sél↑ Mot→ · ▽
         ClicD LOWER ClicG      ▽ ▽ ▽
 ```
 
-Les flèches et les clics de la main gauche pilotent la souris.
+Les flèches et les clics de la main gauche pilotent la souris ; la molette est aussi de part et d'autre de ↑. Mot←/Mot→ = Ctrl+←/→ (avec Shift : sélection par mot), Sél↓/Sél↑ = Ctrl+Shift+↓/↑.
 
 ### ADJUST (LOWER + RAISE ensemble)
 
 ```
 F1    F2 F3 F4 F5 F6  ·  ·  F7 F8 F9 F10 F11 F12
-RGB   Teinte+ Sat+ Lum+ Effet+ ·   ·  ·  · · · · · ·
+RGB   Teinte+ Sat+ Lum+ Effet+ ·   ·  ·  Muet Vol− Vol+ Lum− Lum+ ·
 Boot  Teinte− Sat− Lum− Effet− ·   ·  ·  · · · · · Boot
 ```
 
-Boot est sur les deux coins du bas, pour flasher chaque moitié.
+Boot est sur les deux coins du bas, pour flasher chaque moitié. Le média est sous H J K L.
 
 ## Raccourcis Hyper (macOS)
 
@@ -100,6 +100,7 @@ Les deux OS lisent le clavier en JIS.
 - **macOS** : `keyboard_type_v2 = "jis"` dans `~/.config/karabiner/karabiner.json`.
 - **Linux** : `kb_layout = "jp,fr,fr(ergol),us"` dans Hyprland, donc jp par défaut.
 - **Karabiner** : règle limitée au Corne (`vendor_id` / `product_id` du crkbd) qui transforme Ctrl + C V X Z A S F T W N Q R L P en ⌘ + la même touche, sauf si l'application au premier plan est kitty (`net.kovidgoyal.kitty`) ou UTM/Parallels. Les remaps 英数 → ⌥ gauche, かな → 英数 et Verr Maj → ⌘ droit visent tous les claviers (`is_keyboard: true`) ; le Corne n'envoie aucune de ces touches. La règle globale « ⌘ gauche → Hyper » reste globale.
+- **Karabiner, déplacement par mot** : une règle limitée au Corne transforme Ctrl+←/→ (Shift en option) et Ctrl+Shift+↑/↓ en ⌥ + la même flèche, sauf dans kitty, UTM et Parallels : c'est le déplacement par mot et par paragraphe de macOS.
 - **Karabiner, ABC ⇄ japonais** : une règle limitée au Corne fait de ⌃Espace une bascule : japonais (Romaji) si la source est ABC, ABC sinon (`select_input_source`). Elle n'envoie aucun raccourci, car ⌥Espace ouvrait aussi Raycast. Dans kitty, la source change mais la saisie reste en romaji.
 - **Karabiner, `\`** : macOS JIS donne `_` pour la touche ろ ; une règle limitée au Corne transforme ろ sans modificateur en ⌥ droit + ¥, qui donne `\`.
 - **kitty** : `macos_option_as_alt left`, pour que ⌥ droit reste une Option macOS et que ⌥¥ donne `\` (⌥ gauche reste Alt).
