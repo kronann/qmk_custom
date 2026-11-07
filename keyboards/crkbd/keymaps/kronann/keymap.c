@@ -23,10 +23,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_LOWER] = LAYOUT_split_3x6_3_ex2(
-        JP_EXLM, JP_HASH, JP_AT,   JP_LCBR, JP_RCBR, JP_AMPR, LGUI(KC_PGUP),     JP_CIRC, JP_ASTR, KC_1,    KC_2,    KC_3,    JP_SLSH, KC_DEL,
-        KC_LSFT, JP_DLR,  JP_PERC, JP_LPRN, JP_RPRN, JP_EQL,  LGUI(KC_PGDN),     JP_PIPE, JP_PLUS, KC_4,    KC_5,    KC_6,    JP_MINS, LCTL(KC_SPC),
-        KC_LCTL, JP_GRV,  JP_LABK, JP_LBRC, JP_RBRC, JP_RABK,                             JP_UNDS, KC_7,    KC_8,    KC_9,    JP_DOT,  JP_COMM,
-                                            _______, _______, _______,     KC_0,    _______, _______
+        JP_EXLM, JP_ASTR, KC_1,    KC_2,    KC_3,    JP_SLSH, LGUI(KC_PGUP),     JP_CIRC, JP_AMPR, JP_LCBR, JP_RCBR, JP_AT,   JP_HASH, KC_DEL,
+        KC_LSFT, JP_PLUS, KC_4,    KC_5,    KC_6,    JP_MINS, LGUI(KC_PGDN),     JP_PIPE, JP_EQL,  JP_LPRN, JP_RPRN, JP_DLR,  JP_PERC, LCTL(KC_SPC),
+        KC_LCTL, JP_UNDS, KC_7,    KC_8,    KC_9,    KC_0,                                JP_LABK, JP_LBRC, JP_RBRC, JP_RABK, JP_GRV,  JP_COMM,
+                                            _______, _______, _______,     JP_DOT,  _______, _______
     ),
 
     [_RAISE] = LAYOUT_split_3x6_3_ex2(

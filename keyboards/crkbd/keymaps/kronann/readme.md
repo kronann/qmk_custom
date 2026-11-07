@@ -33,13 +33,13 @@ Toute touche transparente sort avec Super : les raccourcis Hyprland et skhd marc
 ### LOWER (pouce gauche central)
 
 ```
-!     # @ { } &  [WS←] [^]  * 1 2 3 / Suppr
-⇧     $ % ( ) =  [WS→] [|]  + 4 5 6 - ABC⇄あ
-Ctrl  ` < [ ] >             _ 7 8 9 . ,
-        ▽ ▽ ▽                0 ▽ ▽
+!     * 1 2 3 /  [WS←] [^]  & { } @ # Suppr
+⇧     + 4 5 6 -  [WS→] [|]  = ( ) $ % ABC⇄あ
+Ctrl  _ 7 8 9 0             < [ ] > ` ,
+        ▽ ▽ ▽                . ▽ ▽
 ```
 
-WS←/WS→ = Super+PgUp / Super+PgDn. Hyper + LOWER + chiffre 1–5 = Super+chiffre : affiche le workspace N (skhd sur Mac, Hyprland sous Linux). ABC⇄あ = Ctrl+Espace. Shift + `!` = `?`, Shift + `^` = `~`, Shift + `|` = `\` ; Shift + `-` ne fait rien. Symboles à gauche, paires côte à côte ; chiffres en pavé à droite, 0 au pouce.
+WS←/WS→ = Super+PgUp / Super+PgDn. Hyper + LOWER + chiffre 1–5 = Super+chiffre : affiche le workspace N (skhd sur Mac, Hyprland sous Linux). ABC⇄あ = Ctrl+Espace. Shift + `!` = `?`, Shift + `^` = `~`, Shift + `|` = `\` ; Shift + `-` ne fait rien. Chiffres en pavé à gauche (0 à droite du 9), `.` au pouce droit ; symboles à droite, paires côte à côte.
 
 ### RAISE (pouce droit central)
 
